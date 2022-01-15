@@ -1,0 +1,40 @@
+## **当我们执行一条命令ip add的时候**
+
+![流程图](https://img-blog.csdnimg.cn/4dbf34717d434bb692683937feb52fea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeXV0YW9fNTE3,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+## **当我们执行命令，mkdir -p hunau/yutao**
+
+**一、判断路径**
+判断用户是否以绝对路径或相对路径的方式输入命令（如/bin/mkdir），如果是的话，直接执行。
+**二、检查别名**
+Linux 系统会检查用户输入的命令是否为“别名命令”。因为通过 alias 命令是可以给现有命令自定义别名的，即用一个自定义的命令名称来替换原本的命令名称。比如常用命令ll
+![在这里插入图片描述](https://img-blog.csdnimg.cn/6db4feb176ea4d3e8013ace4f5aa9f31.png)
+
+**三、判断用户输入的是内部命令还是外部命令**
+- 内部命令实际上是shell程序的一部分，简单快速系统bash内置源码
+比如：exit，history，cd，echo等。
+- 外部命令是linux系统中的实用程序部分，外部命令的实体并不包含在shell中，但是其命令执行过程是由shell程序控制的。外部命令是在bash之外额外安装的，通常放在/bin，/usr/bin，/sbin，/usr/sbin等。可通过“echo $PATH”命令查看外部命令的存储路径，比如：ls、vim等。
+- type命令可以分辨内部命令与外部命令
+![在这里插入图片描述](https://img-blog.csdnimg.cn/9fad1814becd47cb98c8944a194adfb4.png)
+内部命令直接执行，外部命令检测是否存在缓存，mkdir属于外部命令（执行过的外面命令都会保存在内部缓存中，当再次执行相同的命令，会通过缓存调取执行，也就意味着不会搜索PATH路径）
+
+**四、查找外部命令对应的可执行文件**
+当用户执行的是外部命令时，系统会在指定的多个路径中查找mkdir的可执行文件，而定义这些路径的变量，就称为 PATH 环境变量，其作用就是告诉 Shell 待执行命令的可执行文件可能存放的位置，Shell 会在 PATH 变量包含的多个路径中逐个查找，直到找到为止（如果找不到，Shell 会提供用户“找不到此命令”）。
+**五、启动命令**
+找到mkdir命令，linux内核分配内存空间，启动mkdir命令的进程，返回结果给shell解释器
+**六、返回结果**
+shell解释器创建/hunau/yutao返回用户
+
+## ***总结：当我们执行一个mkdir命令之后，整个命令执行的流程步骤如下：***
+
+ 1. 检查执行的是否是绝对路径执行
+ 2. 检查mkdir命令是否存在别名
+ 3. 检查mkdir命令是内部命令还是外部命令
+ 4. 如果是内部命令直接执行
+ 5. 如果是外部命令，检查mkdir命令是否有缓存，如果没有，shell解释器查找PATH变量
+ 6. 检查PATH路径直到查找到该命令然后执行
+ 7. 如果没有找到该命令则返回错误，command not found
+ 8. 执行mkdir命令，返回结果给shell解释器
+ 9. shell解释器返回结果给用户
+
+

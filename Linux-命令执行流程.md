@@ -1,5 +1,5 @@
 ## **当我们执行一条命令ip add的时候**
-![流程图](https://img-blog.csdnimg.cn/4dbf34717d434bb692683937feb52fea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeXV0YW9fNTE3,size_20,color_FFFFFF,t_70,g_se,x_16)
+![shell](https://user-images.githubusercontent.com/62100249/159151629-d504ddf4-d3dd-4ee2-81ce-7e8b4a8ac59b.png)
 ![shell解析过程图](https://user-images.githubusercontent.com/62100249/159151303-77805de8-7474-4377-a2bd-db97b2a3e2d2.png)
 
 首先明白解释器

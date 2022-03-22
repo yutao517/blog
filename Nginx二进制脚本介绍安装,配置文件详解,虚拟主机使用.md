@@ -46,7 +46,7 @@ events {
     worker_connections  2048;#每一个工作进程的最大连接数量（并发数）， 最大的并发数，理论上，但是和cpu有关，做压力测试可知道实际。 理论上最大连接数 = worker_processes * worker_connections
 }
 http {
-    include       mime.types;
+    include       mime.types; #区分资源的媒体类型
     default_type  application/octet-stream;
     日志格式log_format  main  '$remote_addr - $remote_user [$time_local] "$request"请求网址 '
                       '$status $body_bytes_sent 
@@ -55,8 +55,8 @@ http {
           				#从哪个网站引流跳转过来
                     	'"$http_user_agent" 浏览器
                     	"$http_x_forwarded_for"'代理转发;
-    sendfile        on;
-    keepalive_timeout  65;
+    sendfile        on;  提升性能
+    keepalive_timeout  65; #长连接，保持65秒的长连接
     server {
 	listen  80;
 	server_name www.wyt.com;
@@ -76,7 +76,15 @@ http {
 
 }
 ```
+## 文件描述符的问题
+永久修改文件描述符的限制
+```
+vim /etc/security/limits.conf
+#添加两行
+*soft nofile 100000
+*hard nofile 100000
 
+```
 ## 完成三个域名的虚拟主机配置
 
 ```bash

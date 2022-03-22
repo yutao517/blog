@@ -43,7 +43,7 @@ master进程主要用来管理worker进程，包含：接收来自外界的信�
 ```bash
 worker_processes  2;#进程设置值和CPU核心数一致
 events {
-    worker_connections  2048;#每一个工作进程的最大连接数量， 最大的并发数，理论上，但是和cpu有关，做压力测试可知道实际。 理论上最大连接数 = worker_processes * worker_connections
+    worker_connections  2048;#每一个工作进程的最大连接数量（并发数）， 最大的并发数，理论上，但是和cpu有关，做压力测试可知道实际。 理论上最大连接数 = worker_processes * worker_connections
 }
 http {
     include       mime.types;

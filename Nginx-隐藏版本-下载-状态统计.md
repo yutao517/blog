@@ -40,6 +40,7 @@ stub_status;}
 ![image](https://user-images.githubusercontent.com/62100249/159419323-5317cca4-208c-435e-919d-537b125509ef.png)
 
  **nginx status详解**
+ 
 active connections --->活跃的连接数量
 server accepts handled requests --->总共处理了83个连接 , 成功创建83次握手, 总共处理了140个请求
 reading--->读取客户端的连接数.

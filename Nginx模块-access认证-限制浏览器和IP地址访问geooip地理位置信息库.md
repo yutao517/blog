@@ -1,6 +1,6 @@
 ## Nginx常用模块
 
-core模块；access访问控制模块；auth_basic基本认证模块；autoindex索引模块；log日志模块；gzip压缩模块；stub_status状态模块；
+core模块；access访问控制模块；auth_basic基本认证模块；autoindex索引模块；log日志模块；gzip压缩模块；stub_status状态模块；ngx_http_rewrite_module重定向模块
 
 ## access限制IP地址访问
 

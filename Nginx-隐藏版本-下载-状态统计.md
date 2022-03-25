@@ -1,4 +1,4 @@
-**隐藏版本**
+## 隐藏版本
 
 http增加一行
 
@@ -9,7 +9,7 @@ http增加一行
 ![image](https://user-images.githubusercontent.com/62100249/159419467-0f08708d-188b-49ad-b5a3-baf7ca324013.png)
 
 
-**下载**
+## 下载
 
 server增加一行
 
@@ -26,7 +26,7 @@ autoindex on;
 
 
 
-**状态统计**
+## 状态统计
 
 root html}下增加一行 
 
@@ -39,7 +39,7 @@ stub_status;}
 
 ![image](https://user-images.githubusercontent.com/62100249/159419323-5317cca4-208c-435e-919d-537b125509ef.png)
 
- **nginx status详解**
+## nginx status详解
  
 active connections --->活跃的连接数量
 server accepts handled requests --->总共处理了83个连接 , 成功创建83次握手, 总共处理了140个请求

@@ -176,7 +176,6 @@ service named restart
 客户机配置
 
 ```bash
-bash
  vim /etc/resolv.conf
     #namesever 192.168.2.4 IP地址是刚才的服务机
 ```

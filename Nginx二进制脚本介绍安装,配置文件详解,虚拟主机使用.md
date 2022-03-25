@@ -7,7 +7,7 @@
 ## 二进制脚本安装
 
 ```bash
-bash <(curl -s -L https://cdn.jsdelivr.net/gh/yutao517/blog@main/bash/onekey-install-nginx.sh)
+bash <(curl -s -L https://cdn.jsdelivr.net/gh/yutao517/blog@main/bash/one-key-nginx-install)
 ```
 
 **nginx启动与关闭等常用命令**

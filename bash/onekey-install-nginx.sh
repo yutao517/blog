@@ -41,8 +41,8 @@ service firewalld stop
 systemctl disable firewalld
 
 #临时停止selinux和永久停止selinux
-setenforce 0
-sed  -i '/^SELINUX=/ s/enforcing/disabled/' /etc/selinux/config
+#setenforce 0
+#sed  -i '/^SELINUX=/ s/enforcing/disabled/' /etc/selinux/config
 
 #开机启动
 chmod +x /etc/rc.d/rc.local

@@ -69,7 +69,9 @@ return 403;
 ## geoip地理信息ip
 
 编译前打开geoip库
+
 下载geoip地理信息ip库
+
 http添加
 
 ```bash
@@ -77,7 +79,6 @@ geiop_city  /usr/local/scwangyutao/conf/GeoLiteCity.dat;
 ```
 
 sever添加
-
 ```bash
  if ($geoip_city != 'changsha' ){
 	return 403;

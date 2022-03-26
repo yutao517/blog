@@ -60,3 +60,6 @@ killall -9 nginx
 
 #启动nginx
 /usr/local/scwangyutao99/sbin/nginx
+su
+cd
+nginx

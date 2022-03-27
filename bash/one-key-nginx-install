@@ -62,4 +62,3 @@ killall -9 nginx
 /usr/local/scwangyutao99/sbin/nginx
 su
 cd
-nginx

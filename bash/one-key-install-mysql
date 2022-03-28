@@ -1,6 +1,4 @@
 #!/bin/bash
-#下载压缩包
-wget https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz
 
 #解决软件的依赖关系
 yum  install cmake ncurses-devel gcc  gcc-c++  vim  lsof bzip2 openssl-devel ncurses-compat-libs -y

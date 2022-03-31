@@ -199,8 +199,28 @@ mysql>show create table wyt; #插看wyt表的字符集
   `id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 |
 +-------+----------------------------------------
+mysql>show table status from wyt where name='wyt'\G; #查看表信息
+mysql>show table status like 'wyt'\G; #查看表信息
+*************************** 1. row ***************************
+           Name: wyt
+         Engine: MyISAM
+        Version: 10
+     Row_format: Fixed
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 0
+Max_data_length: 1970324836974591
+   Index_length: 1024
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2022-03-31 21:46:46
+    Update_time: 2022-03-31 21:46:46
+     Check_time: NULL
+      Collation: utf8mb4_general_ci
+       Checksum: NULL
+ Create_options: 
+        Comment: 
 ```
-
 
 - **InnoDB**：InnoDB是事务型数据库的首选引擎，支持事务安全表（ACID），支持行锁定，外键，InnoDB是默认的MySQL引擎。
 - CSV：由逗号分割数据的存储引擎。

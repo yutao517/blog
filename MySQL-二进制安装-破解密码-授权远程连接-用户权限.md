@@ -105,5 +105,26 @@ mysql>select database();#查看当前所在的库
 +------------+
 | wyt        |
 +------------+
-
 ```
+## 默认的四个库
+
+```bash
+mysql>show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+```
+- **information_schema**
+信息数据库，保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。普通用户默认只能看到这个库。
+- **performance_schema** 
+性能架构库，用于收集数据库服务器性能参数。
+- **sys**
+把performance_schema的把复杂度降低，让DBA能更好的阅读这个库里的内容。让DBA更快的了解DB的运行情况。
+- **mysql**
+负责存储数据库的用户、权限设置、关键字等mysql自己需要使用的控制和管理信息，行使管理功能。
+

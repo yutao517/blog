@@ -7,25 +7,25 @@ service mysqld start
 ps aux|grep mysqld #判断MySQL是否运行
 ```
 **mysqld和mysql_safe**
->mysql_safe是父进程，mysqld是子进程
+mysql_safe是父进程，mysqld是子进程
 
 ## 允许远程连接MySQL
 		
 第一种方法
 ```bash
-grant all on *.* to 'root'@'%' identified by '123456';
+mysql>grant all on *.* to 'root'@'%' identified by '123456';
 #grant是授权命令，all表示所有的权限，on *.*在所有库里的所有表，第一个*表示库，第二个*表示表，to 'root'@'%'表示允许root这个用户从任何地方连接过来登录，设置密码为123456
 ```
 第二种方法
 ```bash
-use mysql;
-update user set host = '%' where user = 'root';
-select host, user from user;
-flush privileges;#设置完成后打开服务器安全组配置放行端口3306
+mysql>use mysql;
+mysql>update user set host = '%' where user = 'root';
+mysql>select host, user from user;
+mysql>flush privileges;#设置完成后打开服务器安全组配置放行端口3306
 ```
 ## 修改MySQL密码为123456
 ```bash
-alter user 'root'@'localhost' identified by '123456';
+mysql>alter user 'root'@'localhost' identified by '123456';
 #set password for root@localhost = password('123456'); 
 ```
 ## MySQL重置密码为123456

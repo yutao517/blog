@@ -33,7 +33,14 @@ mysql>show create table t2; #查看t2表详情
 mysql>insert into t2(id,name) values(1,"王宇涛");
 mysql>select * from wyt.t2 #查表
 mysql>delete from t2 where id = 1; #删表
+mysql>truncate t3; 
 ```
+
+**TRUNCATE和DELETE的区别**
+
+> truncate 适合删除大表，速度非常快，理解为直接清空表空间，不会产生二进制日志，不能通过日志去恢复，只能通过原来的备份去恢复。
+> delect 删除数据非常慢，但会产生二进制日志，可以恢复。
+
 ## 数据库类型
 **关系型数据库**：采用二维表格模型来组织数据的数据库。
 

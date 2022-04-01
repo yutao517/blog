@@ -58,8 +58,7 @@ mysql>show grants for wyt; #查看wyt用户的权限
 | GRANT ALL PRIVILEGES ON *.* TO 'wyt'@'%' WITH GRANT OPTION |
 | GRANT SELECT ON `wyt`.* TO 'wyt'@'%'                       |
 +------------------------------------------------------------+
-
-mysql>drop user 'wyt'@'localhost';
+mysql>revoke all on *.* from 'wyt'@'%'; #废除权限
 mysql>drop user 'wyt'@'localhost';
 ```
 

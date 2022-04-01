@@ -34,7 +34,7 @@ mysql>alter user 'root'@'localhost' identified by '123456';
 bash <(curl -s -L https://cdn.jsdelivr.net/gh/yutao517/blog@main/bash/reset-mysql-pwd.sh)
 mysql -uroot -p123456 #登录
 ```
-## 创建用户wyt本地登录
+## 创建新用户授权权限
 
 ```bash
 mysql>create user 'wyt'@'localhost' identified by '123456';
@@ -48,8 +48,11 @@ mysql>select user,host from mysql.user; #查看用户
 | root          | localhost |
 | wyt           | localhost |
 +---------------+-----------+
+
+mysql>grant select on wyt.* to 'wyt'@'%' identified by 'wyt'; #授权wyt用户密码为wyt从任意地方登录，只能查看wyt数据库
 mysql>drop user 'wyt'@'localhost';
 ```
+
 
 ## 查看MySQL版本
 
@@ -73,10 +76,15 @@ mysql>drop user 'wyt'@'localhost';
 ## Windows无法远程连接到MySQL的原因
 
 > 1.windows网络问题
+> 
 > 2.是否授权用户远程登陆
+> 
 > 3.linux防火墙问题
+> 
 > 4.检查mysqld服务是否打开
+> 
 > 5.检查下端口号是否修改
+> 
 > 6.云服务器安全组配置
 
 ## 基本命令

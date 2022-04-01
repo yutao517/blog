@@ -49,7 +49,17 @@ mysql>select user,host from mysql.user; #查看用户
 | wyt           | localhost |
 +---------------+-----------+
 
-mysql>grant select on wyt.* to 'wyt'@'%' identified by 'wyt'; #授权wyt用户密码为wyt从任意地方登录，只能查看wyt数据库
+mysql>grant select on wyt.* to 'wyt'@'%'; #授权wyt用户从任意地方登录，只能查看wyt数据库
+mysql>grant all on *.* to 'wyt'@'%' with grant option; #授权wyt用户所有权限操作所有库表，并且还可以给其他用户授权。
+mysql>show grants for wyt; #查看wyt用户的权限
++------------------------------------------------------------+
+| Grants for wyt@%                                           |
++------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO 'wyt'@'%' WITH GRANT OPTION |
+| GRANT SELECT ON `wyt`.* TO 'wyt'@'%'                       |
++------------------------------------------------------------+
+
+mysql>drop user 'wyt'@'localhost';
 mysql>drop user 'wyt'@'localhost';
 ```
 

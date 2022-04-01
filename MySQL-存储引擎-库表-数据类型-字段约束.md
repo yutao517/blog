@@ -32,6 +32,7 @@ mysql>desc t2; #查看表结构
 mysql>show create table t2;
 mysql>insert into t2(id,name) values(1,"王宇涛");
 mysql>select * from wyt.t2 #查表
+mysql>delete from t2 where id = 1; 删表
 ```
 ## 数据库类型
 **关系型数据库**：采用二维表格模型来组织数据的数据库。
@@ -191,7 +192,7 @@ mysql>select * from emp;
 ```bash
 mysql>show engines; #查看存储引擎	
 mysql>create table wyt(id int) engine=myisam default charset=utf8mb4; #指定存储引擎和默认字符集
-mysql>show create table wyt; #插看wyt表的字符集
+mysql>show create table wyt; #查看wyt表的字符集
 +-------+------------------------------------------------------------------------------------------+
 | Table | Create Table                                                                             |
 +-------+------------------------------------------------------------------------------------------+

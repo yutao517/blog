@@ -7,6 +7,7 @@ service mysqld start
 ps aux|grep mysqld #判断MySQL是否运行
 ```
 **mysqld和mysql_safe**
+
 mysql_safe是父进程，mysqld是子进程
 
 ## 允许远程连接MySQL

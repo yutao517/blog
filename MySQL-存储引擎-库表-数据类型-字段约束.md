@@ -35,6 +35,13 @@ mysql>select * from wyt.t2 #查表
 mysql>delete from t2 where id = 1; #删表
 mysql>truncate t3; 
 ```
+**update更新**
+
+```bash
+mysql>update t2 set name = 'wyt' where id =1;
+mysql>update t2 set name = replace(name,'wyt','王宇涛') where id =1;
+mysql>select * from t7 ORDER BY score ASC; #成绩升序，DESC降序
+```
 
 **TRUNCATE和DELETE的区别**
 

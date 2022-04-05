@@ -1,3 +1,4 @@
+[![](https://data.jsdelivr.com/v1/package/gh/yutao517/blog/badge)](https://www.jsdelivr.com/package/gh/yutao517/blog)
 ## 事务
 
 **事务(Transaction)**：指要做的或所做的事情。MySQL事务是由一条或者多条sql语句构成，它们形成一个逻辑的工作单元，这些sql语句要么全部执行成功要么全部执行失败。事务是保证数据完整性和一致性的重要手段。

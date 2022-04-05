@@ -53,7 +53,7 @@ echo  "/usr/local/scwangyutao99/sbin/nginx" >>/etc/rc.local
 sed  -i '/worker_processes/ s/1/2/' /usr/local/scwangyutao99/conf/nginx.conf
 sed  -i  '/worker_connections/ s/1024/2048/' /usr/local/scwangyutao99/conf/nginx.conf
 sed  -i -r '36c \\tlisten  80;' /usr/local/scwangyutao99/conf/nginx.conf
-sed  -i -r '37c \\tserver_name www.wangyutao.com;' /usr/local/scwangyutao99/conf/nginx.conf
+sed  -i -r '37c \\tserver_name www.yutao.co;' /usr/local/scwangyutao99/conf/nginx.conf
 
 #killall nginx进程
 killall -9 nginx

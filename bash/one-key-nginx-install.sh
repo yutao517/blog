@@ -57,8 +57,6 @@ sed  -i -r '37c \\tserver_name www.yutao.co;' /usr/local/scwangyutao99/conf/ngin
 
 #killall nginx进程
 killall -9 nginx
-
+su
 #启动nginx
 /usr/local/scwangyutao99/sbin/nginx
-su
-cd

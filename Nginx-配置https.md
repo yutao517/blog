@@ -63,7 +63,7 @@ server {
     
  server {
         listen       80;
-        server_name  www.yutao.to;
+        server_name  www.yutao.co;
 
         location / {
         rewrite ^(.*) https://$server_name$1 permanent;

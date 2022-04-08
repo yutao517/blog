@@ -90,7 +90,7 @@ mysql>start slave;#开启slave
 延时备份让slave滞后于master一段时间,当你误操作时只要立即停止slave的同步,即可轻松地从延时备份库中找回你误删的数据，可以起到全备的作用。
 ```bash
 mysql>stop slave #停止slave
-mysql>CHANGE MASTER TO MASTER_DELAY = 180; 延迟180秒
+mysql>CHANGE MASTER TO MASTER_DELAY = 3600; 延迟3600秒
 mysql>start slave;
 ```
 

@@ -85,6 +85,16 @@ mysql>start slave;#开启slave
 
 检验：我们在主服务器上建库，会同步到从服务器。
 
+## 延迟备份
+
+延时备份让slave滞后于master一段时间,当你误操作时只要立即停止slave的同步,即可轻松地从延时备份库中找回你误删的数据，可以起到全备的作用。
+```bash
+mysql>stop slave #停止slave
+mysql>CHANGE MASTER TO MASTER_DELAY = 180; 延迟180秒
+mysql>start slave;
+```
+
+
 ## xtrabackup
 因为意外导致某个MySQL的从服务器宕机，且不可修复，因为是业务数据库，不能停机和锁表进行从库的搭建，二进制日志文件和位置号发生变化不好确定，所以考虑使用xtrabackup工具进行在线主从搭建。
 

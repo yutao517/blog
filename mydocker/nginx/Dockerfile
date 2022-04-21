@@ -10,7 +10,6 @@ RUN set -ex; \
     yum install vim -y \
     yum install iputils -y \
     yum install net-tools -y \
-    yum install iproute-4.11.0-30.el7.x86_64 -y
 ENV PATH=/usr/local/nginx/sbin:$PATH
 EXPOSE 80
 STOPSIGNAL SIGQUIT

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pv-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: hello-world.info
+    http:
+      paths:
+      - path: /nfs(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-pv
+            port:
+              number: 80
+      - path: /hostpath(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx2-pv
+            port:
+              number: 80
+
+

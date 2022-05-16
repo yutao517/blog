@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs
+  labels:
+    type: pv-nfs
+spec:
+  capacity:
+    storage: 5Gi 
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs         #pv对应的名字
+  nfs:
+    path: "/web"       #nfs共享的目录
+    server: 192.168.2.50   #nfs服务器的ip地址
+    readOnly: false 

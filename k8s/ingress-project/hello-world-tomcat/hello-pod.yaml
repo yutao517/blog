@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      run: web
+  template:
+    metadata:
+      labels:
+        run: web
+    spec:
+      containers:
+      - name: web
+        image: registry.cn-hangzhou.aliyuncs.com/yutao517/hello-app:1.0
+        ports:
+        - containerPort: 8080
